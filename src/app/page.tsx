@@ -6,7 +6,7 @@ import TaskCard from "@/components/domain/TaskCard";
 import SmartSuggestionsClient from "@/components/domain/SmartSuggestionsClient";
 import { placeholderHandymen, placeholderTasks } from "@/lib/placeholder-data";
 import Link from "next/link";
-import { ArrowRight, Search, Send } from "lucide-react";
+import { ArrowRight, Search, Send, ListChecks } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
