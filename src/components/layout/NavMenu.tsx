@@ -16,23 +16,30 @@ const navItems = [
   { href: '/profile', label: 'Profile', icon: UserCircle },
 ];
 
-export default function NavMenu() {
+interface NavMenuProps {
+  isMobile?: boolean;
+}
+
+export default function NavMenu({ isMobile = false }: NavMenuProps) {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+    <nav className={cn(
+      isMobile ? 'flex flex-col space-y-2' : 'hidden md:flex items-center space-x-2 lg:space-x-4'
+    )}>
       {navItems.map((item) => (
         <Button
           key={item.href}
           variant="ghost"
           asChild
           className={cn(
-            'transition-colors hover:text-primary',
-            pathname === item.href ? 'text-primary font-semibold' : 'text-foreground/70'
+            'transition-colors hover:text-primary justify-start',
+            isMobile ? 'w-full text-lg p-6' : 'text-sm',
+            pathname === item.href ? 'text-primary font-semibold bg-accent/50' : 'text-foreground/70'
           )}
         >
-          <Link href={item.href} className="flex items-center gap-2 text-sm">
-            <item.icon className="h-4 w-4" />
+          <Link href={item.href} className="flex items-center gap-4">
+            <item.icon className="h-5 w-5" />
             {item.label}
           </Link>
         </Button>
