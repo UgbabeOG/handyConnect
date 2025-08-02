@@ -1,6 +1,6 @@
 # Firebase Studio
 
-This is a platform connecting users with handymen for various services. It's built using NextJS.
+
 
 The goal of this application is to provide a seamless experience for users to find and hire skilled handymen, and for handymen to connect with potential clients.
 
