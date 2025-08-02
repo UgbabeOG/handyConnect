@@ -2,7 +2,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, ListChecks, Briefcase, UserCircle, Star } from 'lucide-react';
+import { Home, Users, ListChecks, Briefcase, UserCircle, Star, Gift } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -12,6 +12,7 @@ const navItems = [
   { href: '/tasks', label: 'Tasks', icon: ListChecks },
   { href: '/tasks/new', label: 'Post Task', icon: Briefcase },
   { href: '/reviews', label: 'Reviews', icon: Star },
+  { href: '/referrals', label: 'Referrals', icon: Gift },
   { href: '/profile', label: 'Profile', icon: UserCircle },
 ];
 
