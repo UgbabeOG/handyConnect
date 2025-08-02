@@ -24,7 +24,8 @@ const signupFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   password: z.string().min(8, { message: "Password must be at least 8 characters." }),
-  confirmPassword: z.string()
+  confirmPassword: z.string(),
+  referralCode: z.string().optional(),
 }).refine(data => data.password === data.confirmPassword, {
   message: "Passwords don't match",
   path: ["confirmPassword"],
@@ -41,6 +42,7 @@ export default function SignupPage() {
       email: "",
       password: "",
       confirmPassword: "",
+      referralCode: "",
     },
   })
 
@@ -110,6 +112,19 @@ export default function SignupPage() {
                     <FormLabel>Confirm Password</FormLabel>
                     <FormControl>
                       <Input type="password" placeholder="••••••••" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="referralCode"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Referral Code (Optional)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter referral code" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
