@@ -48,6 +48,9 @@ export default function AddNewTaskPage() {
       title: "",
       description: "",
       location: "",
+      category: undefined,
+      pay: 0,
+      dueDate: undefined,
     },
   })
 
